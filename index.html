@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Nana & Primada</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-image-placeholder">
+            <!-- Background Image via CSS -->
+        </div>
+        <div class="hero-content">
+            <div class="guest-info" id="guestInfoBox" style="display: none;">
+                <p class="guest-label">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+                <h2 class="guest-name" id="guestName"></h2>
+                <p class="invitation-text">Kami mengundang Anda untuk hadir di acara pernikahan kami</p>
+            </div>
+
+            <h1 class="couple-names">Nana & Primada</h1>
+
+            <p class="blessing-text">"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya."<br><strong>(QS. Ar-Rum: 21)</strong></p>
+            
+            <div class="scroll-hint">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Couple Details Section -->
+    <section class="couple-details reveal">
+        <h2 class="section-title">Kedua Mempelai</h2>
+        
+        <div class="mempelai-card">
+            <div class="mempelai-info">
+                <h3 class="mempelai-name">Najiyyatul Fithriyyah (Nana)</h3>
+                <p class="parent-names">Putri kedua dari Bapak Jajok Sumanrianto dan Ibu Nurlaila Urifa</p>
+            </div>
+            
+            <div class="and-symbol-large">&amp;</div>
+            
+            <div class="mempelai-info">
+                <h3 class="mempelai-name">Gharis Primada Hariyono (Primada)</h3>
+                <p class="parent-names">Putra tunggal dari Almarhum Bapak Yoyok Eko Hariyono dan Ibu Dhina Verawati Ariningtyas</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery reveal">
+        <h2 class="section-title">Galeri Momen</h2>
+        <div class="gallery-carousel">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800" alt="Prewedding Moment 1">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=800" alt="Prewedding Moment 2">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800" alt="Prewedding Moment 3">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&q=80&w=800" alt="Prewedding Moment 4">
+            </div>
+        </div>
+        <p class="swipe-hint">Geser untuk melihat momen kami &rarr;</p>
+    </section>
+
+    <!-- Logistics Section -->
+    <section class="logistics reveal">
+        <div class="info-card">
+            <h2>Waktu & Tempat</h2>
+            <div class="logistics-grid">
+                <div class="logistics-item">
+                    <span class="label">Tanggal</span>
+                    <span class="value">Jumat, 28 Agustus 2026</span>
+                </div>
+                <div class="logistics-item">
+                    <span class="label">Waktu</span>
+                    <span class="value">13.00 WIB - Selesai</span>
+                </div>
+                <div class="logistics-item full-width">
+                    <span class="label">Lokasi</span>
+                    <span class="value">To Be Announced (TBA)</span>
+                </div>
+            </div>
+            <a href="https://maps.google.com" target="_blank" class="btn-maps">Buka di Google Maps</a>
+        </div>
+    </section>
+
+    <!-- Cashless Gifting Hub -->
+    <section class="gifting reveal">
+        <div class="gifting-card">
+            <h2>Tanda Kasih</h2>
+            <p class="gifting-note">Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika Anda ingin memberikan tanda kasih, Anda dapat memberikannya melalui:</p>
+            
+            <div class="bank-account">
+                <div class="bank-details">
+                    <p class="bank-name">BANK BCA</p>
+                    <p class="account-number" id="accNumber">1234567890</p>
+                    <p class="account-holder">a.n. Nana / Primada</p>
+                </div>
+                <button onclick="copyToClipboard()" class="btn-copy">Salin Nomor</button>
+            </div>
+
+            <div class="qris-section">
+                <div class="qris-box">
+                    <span>QRIS Placeholder</span>
+                </div>
+                <a href="qris.jpg" download="QRIS_Nana_Primada.jpg" class="btn-download-qris">Unduh QRIS</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="simple-footer">
+        <p>Nana & Primada</p>
+    </footer>
+
+    <script>
+        // Parse Guest Name from URL
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const guestName = urlParams.get('to') || urlParams.get('name');
+            if (guestName) {
+                document.getElementById('guestName').innerText = guestName;
+                document.getElementById('guestInfoBox').style.display = 'block';
+            }
+
+            // Scroll Reveal Animation
+            const observerOptions = {
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+
+        function copyToClipboard() {
+            const accNum = document.getElementById('accNumber').innerText;
+            navigator.clipboard.writeText(accNum).then(() => {
+                const btn = document.querySelector('.btn-copy');
+                const originalText = btn.innerText;
+                btn.innerText = 'Tersalin!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

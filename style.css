@@ -1,0 +1,433 @@
+:root {
+    --bg-color: #fdfbf7;
+    --text-main: #2c3e50;
+    --text-muted: #7f8c8d;
+    --accent-color: #6d8299;
+    --fintech-blue: #0066AE;
+    --fintech-bg: #f0f7ff;
+    --shadow: 0 4px 15px rgba(0,0,0,0.05);
+    --btn-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 2px 4px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(rgba(253, 251, 247, 0.8), rgba(253, 251, 247, 0.8)), 
+                url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=1000') center/cover no-repeat;
+}
+
+.guest-info {
+    margin-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+    max-width: 90%;
+}
+
+.guest-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.guest-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: var(--text-main);
+    margin-bottom: 5px;
+}
+
+.invitation-text {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 5px;
+    font-style: normal;
+}
+
+.blessing-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    max-width: 320px;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.couple-names {
+    font-size: 2.8rem;
+    color: var(--accent-color);
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+/* Couple Details Section */
+.couple-details {
+    padding: 80px 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+.mempelai-card {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.mempelai-info {
+    margin: 20px 0;
+}
+
+.mempelai-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.parent-names {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.and-symbol-large {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 2.5rem;
+    color: #dcdcdc;
+    margin: 10px 0;
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 60px 0;
+    background-color: #fdfbf7;
+    text-align: center;
+}
+
+.gallery-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 15px;
+    padding: 0 20px 20px;
+    scrollbar-width: none; /* Hide scrollbar Firefox */
+    -ms-overflow-style: none;  /* Hide scrollbar IE/Edge */
+}
+
+.gallery-carousel::-webkit-scrollbar {
+    display: none; /* Hide scrollbar Chrome/Safari */
+}
+
+.gallery-item {
+    flex: 0 0 80%;
+    scroll-snap-align: center;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.swipe-hint {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.scroll-hint {
+    color: var(--text-muted);
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Logistics Section */
+.logistics {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.info-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.info-card h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--accent-color);
+}
+
+.logistics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.logistics-item .label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+}
+
+.logistics-item .value {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+.btn-maps {
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    color: #444;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: var(--btn-shadow);
+    border: 1px solid #ddd;
+    transition: transform 0.1s;
+}
+
+.btn-maps:active {
+    transform: translateY(2px);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Gifting Section */
+.gifting {
+    padding: 40px 20px 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.gifting-card {
+    background: var(--fintech-bg);
+    padding: 40px 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #d0e6ff;
+}
+
+.gifting-card h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: var(--fintech-blue);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.gifting-note {
+    font-size: 0.85rem;
+    color: var(--text-main);
+    margin-bottom: 25px;
+}
+
+.bank-account {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid var(--fintech-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,102,174,0.1);
+}
+
+.bank-details {
+    overflow: hidden;
+}
+
+.bank-name {
+    font-weight: 800;
+    color: var(--fintech-blue);
+    font-size: 0.75rem;
+}
+
+.account-number {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 5px 0;
+}
+
+.account-holder {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.btn-copy {
+    background: var(--fintech-blue);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--btn-shadow);
+    transition: all 0.2s;
+    flex-shrink: 0;
+    margin-left: 10px;
+}
+
+.btn-copy.copied {
+    background: #27ae60;
+}
+
+.qris-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.qris-box {
+    width: 150px;
+    height: 150px;
+    background: #fff;
+    border: 2px dashed #ccc;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    font-size: 0.7rem;
+    border-radius: 8px;
+}
+
+.btn-download-qris {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white;
+    color: var(--fintech-blue);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 6px;
+    border: 1px solid var(--fintech-blue);
+    transition: all 0.2s;
+}
+
+.btn-download-qris:active {
+    background-color: var(--fintech-bg);
+    transform: scale(0.98);
+}
+
+/* Footer */
+.simple-footer {
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+/* Scroll Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 480px) {
+    .couple-names {
+        font-size: 2.4rem;
+    }
+    .guest-name {
+        font-size: 1.2rem;
+    }
+}
