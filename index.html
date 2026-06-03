@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Pernikahan Nana & Primada</title>
+    <title>Undangan Pernikahan Nana & Mada</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
 
@@ -17,15 +21,18 @@
             <!-- Background Image via CSS -->
         </div>
         <div class="hero-content">
+            <div class="hero-header-text">
+                <div class="intro-phrase">
+                    Atas Berkat Rochmat Alloh Yang Maha Kuasa
+                </div>
+                <h1 class="couple-names">Nana & Mada</h1>
+            </div>
+
             <div class="guest-info" id="guestInfoBox" style="display: none;">
                 <p class="guest-label">Kepada Yth. Bapak/Ibu/Saudara/i</p>
                 <h2 class="guest-name" id="guestName"></h2>
                 <p class="invitation-text">Kami mengundang Anda untuk hadir di acara pernikahan kami</p>
             </div>
-
-            <h1 class="couple-names">Nana & Primada</h1>
-
-            <p class="blessing-text">"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya."<br><strong>(QS. Ar-Rum: 21)</strong></p>
             
             <div class="scroll-hint">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -34,6 +41,11 @@
             </div>
         </div>
     </header>
+
+    <!-- Blessing Section -->
+    <section class="blessing reveal">
+        <p class="blessing-text">"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya."<br><strong>(QS. Ar-Rum: 21)</strong></p>
+    </section>
 
     <!-- Couple Details Section -->
     <section class="couple-details reveal">
@@ -48,7 +60,7 @@
             <div class="and-symbol-large">&amp;</div>
             
             <div class="mempelai-info">
-                <h3 class="mempelai-name">Gharis Primada Hariyono (Primada)</h3>
+                <h3 class="mempelai-name">Gharis Primada Hariyono (Mada)</h3>
                 <p class="parent-names">Putra tunggal dari Almarhum Bapak Yoyok Eko Hariyono dan Ibu Dhina Verawati Ariningtyas</p>
             </div>
         </div>
@@ -59,16 +71,28 @@
         <h2 class="section-title">Galeri Momen</h2>
         <div class="gallery-carousel">
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800" alt="Prewedding Moment 1">
+                <img src="public/images/2.jpg" alt="Prewedding Moment 2">
             </div>
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=800" alt="Prewedding Moment 2">
+                <img src="public/images/3.jpg" alt="Prewedding Moment 3">
             </div>
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800" alt="Prewedding Moment 3">
+                <img src="public/images/4.jpg" alt="Prewedding Moment 4">
             </div>
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&q=80&w=800" alt="Prewedding Moment 4">
+                <img src="public/images/5.jpg" alt="Prewedding Moment 5">
+            </div>
+            <div class="gallery-item">
+                <img src="public/images/6.jpg" alt="Prewedding Moment 6">
+            </div>
+            <div class="gallery-item">
+                <img src="public/images/7.jpg" alt="Prewedding Moment 7">
+            </div>
+            <div class="gallery-item">
+                <img src="public/images/8.jpg" alt="Prewedding Moment 8">
+            </div>
+            <div class="gallery-item">
+                <img src="public/images/9.jpg" alt="Prewedding Moment 9">
             </div>
         </div>
         <p class="swipe-hint">Geser untuk melihat momen kami &rarr;</p>
@@ -106,7 +130,7 @@
                 <div class="bank-details">
                     <p class="bank-name">BANK BCA</p>
                     <p class="account-number" id="accNumber">1234567890</p>
-                    <p class="account-holder">a.n. Nana / Primada</p>
+                    <p class="account-holder">a.n. Nana / Mada</p>
                 </div>
                 <button onclick="copyToClipboard()" class="btn-copy">Salin Nomor</button>
             </div>
@@ -120,8 +144,15 @@
         </div>
     </section>
 
+    <!-- Thank You Section -->
+    <section class="thank-you reveal">
+        <h2>Terima Kasih</h2>
+        <img src="public/images/10.png" alt="Thank You" class="thank-you-image">
+        <p>Atas doa dan restu yang telah diberikan, kami ucapkan terima kasih yang sebesar-besarnya.</p>
+    </section>
+
     <footer class="simple-footer">
-        <p>Nana & Primada</p>
+        <p>Nana & Mada | 2026 | Made by GPHARIYONO 💖</p>
     </footer>
 
     <script>

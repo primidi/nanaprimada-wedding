@@ -1,10 +1,11 @@
 :root {
-    --bg-color: #fdfbf7;
-    --text-main: #2c3e50;
-    --text-muted: #7f8c8d;
-    --accent-color: #6d8299;
-    --fintech-blue: #0066AE;
-    --fintech-bg: #f0f7ff;
+    --bg-color: #EDEDFF;
+    --text-main: #1A1314;
+    --text-muted: #403335;
+    --accent-color: #B2BDE1;
+    --light-blue: #6A89B5;
+    --fintech-blue: #7084B8;
+    --fintech-bg: #F5F5FF;
     --shadow: 0 4px 15px rgba(0,0,0,0.05);
     --btn-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -28,23 +29,36 @@ h1, h2 {
     font-weight: 400;
 }
 
+.intro-phrase {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
 /* Hero Section */
 .hero {
     height: 100vh;
     width: 100%;
     position: relative;
+    text-align: center;
+    background: linear-gradient(rgba(237, 237, 255, 0.8), rgba(237, 237, 255, 0.8)), 
+                url('public/images/1.jpg') top center / cover no-repeat;
+}
+
+.hero-content {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
-    padding: 20px;
-    background: linear-gradient(rgba(253, 251, 247, 0.8), rgba(253, 251, 247, 0.8)), 
-                url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=1000') center/cover no-repeat;
+    padding: 80px 20px 100px;
 }
 
 .guest-info {
-    margin-bottom: 1.5rem;
+    margin-top: 2rem;
     margin-left: auto;
     margin-right: auto;
     padding: 15px 25px;
@@ -79,22 +93,30 @@ h1, h2 {
     font-style: normal;
 }
 
+/* Blessing Section */
+.blessing {
+    padding: 60px 20px;
+    background-color: var(--text-muted);
+    text-align: center;
+}
+
 .blessing-text {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    max-width: 320px;
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--bg-color);
+    max-width: 500px;
     margin-left: auto;
     margin-right: auto;
     font-style: italic;
-    line-height: 1.5;
+    line-height: 1.6;
+}
+
+.blessing-text strong {
+    color: var(--accent-color);
 }
 
 .couple-names {
     font-size: 2.8rem;
-    color: var(--accent-color);
-    margin-top: 2rem;
+    color: var(--text-main);
     margin-bottom: 0.5rem;
     letter-spacing: 1px;
 }
@@ -102,7 +124,7 @@ h1, h2 {
 /* Couple Details Section */
 .couple-details {
     padding: 80px 20px;
-    background-color: white;
+    background-color: var(--bg-color);
     text-align: center;
 }
 
@@ -110,7 +132,7 @@ h1, h2 {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 3px;
-    color: var(--text-muted);
+    color: var(--text-main);
     margin-bottom: 30px;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
@@ -128,7 +150,7 @@ h1, h2 {
 .mempelai-name {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2rem;
-    color: var(--accent-color);
+    color: var(--text-main);
     margin-bottom: 5px;
 }
 
@@ -151,7 +173,7 @@ h1, h2 {
 /* Gallery Section */
 .gallery {
     padding: 60px 0;
-    background-color: #fdfbf7;
+    background-color: rgba(178, 189, 225, 0.2);
     text-align: center;
 }
 
@@ -217,6 +239,7 @@ h1, h2 {
 /* Logistics Section */
 .logistics {
     padding: 60px 20px;
+    background-color: var(--bg-color);
     display: flex;
     justify-content: center;
 }
@@ -234,7 +257,7 @@ h1, h2 {
 .info-card h2 {
     font-size: 2rem;
     margin-bottom: 30px;
-    color: var(--accent-color);
+    color: var(--text-main);
 }
 
 .logistics-grid {
@@ -410,6 +433,39 @@ h1, h2 {
     letter-spacing: 2px;
 }
 
+/* Thank You Section */
+.thank-you {
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--light-blue);
+    gap: 20px;
+}
+
+.thank-you h2 {
+    font-size: 2.5rem;
+    color: var(--bg-color);
+    margin-bottom: 0;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.thank-you-image {
+    width: 250px;
+    height: auto;
+    max-width: 90%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border-radius: 50%; /* Keep this to hide potential black corners in the file */
+}
+
+.thank-you p {
+    font-size: 1rem;
+    color: var(--bg-color);
+    max-width: 400px;
+}
+
 /* Scroll Animations */
 .reveal {
     opacity: 0;
@@ -420,6 +476,17 @@ h1, h2 {
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Desktop Optimizations */
+@media (min-width: 769px) {
+    .gallery-item {
+        flex: 0 0 350px;
+    }
+    
+    .gallery-carousel {
+        justify-content: center;
+    }
 }
 
 /* Mobile Optimizations */
