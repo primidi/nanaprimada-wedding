@@ -180,7 +180,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 </head>
-<body>
+<body class="scroll-locked">
 
     <!-- Hero Section -->
     <header class="hero">
@@ -194,10 +194,19 @@
                 <h1 class="couple-names">Nana & Mada</h1>
             </div>
 
-            <div class="guest-info" id="guestInfoBox" style="display: none;">
-                <p class="guest-label">Kepada Yth. Bapak/Ibu/Saudara/i</p>
-                <h2 class="guest-name" id="guestName"></h2>
-                <p class="invitation-text">Kami mengundang Anda untuk hadir di acara pernikahan kami</p>
+            <div class="cover-card" id="coverCard">
+                <div class="guest-info" id="guestInfoBox" style="display: none;">
+                    <p class="guest-label">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+                    <h2 class="guest-name" id="guestName"></h2>
+                    <p class="invitation-text">Kami mengundang Anda untuk hadir di acara pernikahan kami</p>
+                </div>
+                
+                <div class="open-button-container" id="openButtonContainer">
+                    <button id="btnOpenInvitation" class="btn-open-invitation">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: middle;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        Buka Undangan
+                    </button>
+                </div>
             </div>
             
             <div class="scroll-hint">
@@ -208,109 +217,138 @@
         </div>
     </header>
 
-    <!-- Blessing Section -->
-    <section class="blessing reveal">
-        <p class="blessing-text">"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya."<br><strong>(QS. Ar-Rum: 21)</strong></p>
-    </section>
-
-    <!-- Couple Details Section -->
-    <section class="couple-details reveal">
-        <h2 class="section-title">Kedua Mempelai</h2>
+    <!-- Main Content Container (Hidden initially until Opened) -->
+    <div id="mainContent" style="display: none;">
         
-        <div class="mempelai-card">
-            <div class="mempelai-info">
-                <h3 class="mempelai-name">Najiyyatul Fithriyyah (Nana)</h3>
-                <p class="parent-names">Putri kedua dari Bapak Jajok Sumanrianto dan Ibu Nurlaila Urifa</p>
-            </div>
+        <!-- Couple Details Section -->
+        <section id="couple" class="couple-details reveal">
+            <h2 class="section-title">Kedua Mempelai</h2>
             
-            <div class="and-symbol-large">&amp;</div>
-            
-            <div class="mempelai-info">
-                <h3 class="mempelai-name">Gharis Primada Hariyono (Mada)</h3>
-                <p class="parent-names">Putra tunggal dari Almarhum Bapak Yoyok Eko Hariyono dan Ibu Dhina Verawati Ariningtyas</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="gallery reveal">
-        <h2 class="section-title">Galeri Momen</h2>
-        <div class="gallery-carousel">
-            <div class="gallery-item">
-                <img src="public/images/2.webp" alt="Prewedding Moment 2" loading="lazy" decoding="async" width="1080" height="1620">
-            </div>
-            <div class="gallery-item">
-                <img src="public/images/3.webp" alt="Prewedding Moment 3" loading="lazy" decoding="async" width="1080" height="1620">
-            </div>
-            <div class="gallery-item">
-                <img src="public/images/4.webp" alt="Prewedding Moment 4" loading="lazy" decoding="async" width="1080" height="1620">
-            </div>
-            <div class="gallery-item">
-                <img src="public/images/5.webp" alt="Prewedding Moment 5" loading="lazy" decoding="async" width="1080" height="1620">
-            </div>
-            <div class="gallery-item">
-                <img src="public/images/6.webp" alt="Prewedding Moment 6" loading="lazy" decoding="async" width="1080" height="1620">
-            </div>
-            <div class="gallery-item">
-                <img src="public/images/7.webp" alt="Prewedding Moment 7" loading="lazy" decoding="async" width="1080" height="1620">
-            </div>
-            <div class="gallery-item">
-                <img src="public/images/8.webp" alt="Prewedding Moment 8" loading="lazy" decoding="async" width="1080" height="1620">
-            </div>
-            <div class="gallery-item">
-                <img src="public/images/9.webp" alt="Prewedding Moment 9" loading="lazy" decoding="async" width="1080" height="1620">
-            </div>
-        </div>
-        <p class="swipe-hint">Geser untuk melihat momen kami &rarr;</p>
-    </section>
-
-    <!-- Logistics Section -->
-    <section class="logistics reveal">
-        <div class="info-card">
-            <h2>Waktu & Tempat</h2>
-            <div class="logistics-grid">
-                <div class="logistics-item">
-                    <span class="label">Tanggal</span>
-                    <span class="value">Jumat, 28 Agustus 2026</span>
+            <div class="mempelai-card">
+                <div class="mempelai-avatar-container">
+                    <img src="public/images/2.webp" alt="Najiyyatul Fithriyyah (Nana)" class="mempelai-avatar" loading="lazy" decoding="async" width="800" height="800">
                 </div>
-                <div class="logistics-item">
-                    <span class="label">Waktu</span>
-                    <span class="value">13.00 WIB - Selesai</span>
+                <div class="mempelai-info">
+                    <h3 class="mempelai-name">Najiyyatul Fithriyyah (Nana)</h3>
+                    <p class="parent-names">Putri kedua dari Bapak Jajok Sumanrianto dan Ibu Nurlaila Urifa</p>
                 </div>
-                <div class="logistics-item full-width">
-                    <span class="label">Lokasi</span>
-                    <span class="value">Gedung Dinas Perikanan Kabupaten Malang (Jl. Trunojoyo No.12, Krajan, Panggungrejo, Kec. Kepanjen, Kabupaten Malang, Jawa Timur 65163)</span>
+                
+                <div class="and-symbol-large">&amp;</div>
+                
+                <div class="mempelai-avatar-container">
+                    <img src="public/images/3.webp" alt="Gharis Primada Hariyono (Mada)" class="mempelai-avatar" loading="lazy" decoding="async" width="800" height="800">
+                </div>
+                <div class="mempelai-info">
+                    <h3 class="mempelai-name">Gharis Primada Hariyono (Mada)</h3>
+                    <p class="parent-names">Putra tunggal dari Almarhum Bapak Yoyok Eko Hariyono dan Ibu Dhina Verawati Ariningtyas</p>
                 </div>
             </div>
-            <a href="https://maps.app.goo.gl/amWABD23a7V7shCZ6" target="_blank" class="btn-maps">Buka di Google Maps</a>
-        </div>
-    </section>
+        </section>
 
-    <!-- Cashless Gifting Hub -->
-    <section class="gifting reveal">
-        <div class="gifting-card">
-            <h2>Tanda Kasih</h2>
-            <p class="gifting-note">Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika Anda ingin memberikan tanda kasih, Anda dapat memberikannya melalui:</p>
-            
-            <div class="qris-section">
-                <div class="qris-box">
-                    <img src="public/images/qris.jpeg" alt="QRIS Nana & Mada" class="qris-img" loading="lazy" decoding="async" width="874" height="1240">
+        <!-- Blessing Section -->
+        <section class="blessing reveal">
+            <p class="blessing-text">"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya."<br><strong>(QS. Ar-Rum: 21)</strong></p>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery reveal">
+            <h2 class="section-title">Galeri Momen</h2>
+            <div class="gallery-carousel">
+                <div class="gallery-item">
+                    <img src="public/images/4.webp" alt="Prewedding Moment 4" loading="lazy" decoding="async" width="1080" height="1620">
                 </div>
-                <a href="public/images/qris.jpeg" download="QRIS_Nana_Primada.jpg" class="btn-download-qris">Unduh QRIS</a>
+                <div class="gallery-item">
+                    <img src="public/images/5.webp" alt="Prewedding Moment 5" loading="lazy" decoding="async" width="1080" height="1620">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/images/6.webp" alt="Prewedding Moment 6" loading="lazy" decoding="async" width="1080" height="1620">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/images/7.webp" alt="Prewedding Moment 7" loading="lazy" decoding="async" width="1080" height="1620">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/images/8.webp" alt="Prewedding Moment 8" loading="lazy" decoding="async" width="1080" height="1620">
+                </div>
+                <div class="gallery-item">
+                    <img src="public/images/9.webp" alt="Prewedding Moment 9" loading="lazy" decoding="async" width="1080" height="1620">
+                </div>
+            </div>
+            <p class="swipe-hint">Geser untuk melihat momen kami &rarr;</p>
+        </section>
+
+        <!-- Logistics Section -->
+        <section class="logistics reveal">
+            <div class="info-card">
+                <h2>Waktu & Tempat</h2>
+                <div class="logistics-grid">
+                    <div class="logistics-item">
+                        <span class="label">Tanggal</span>
+                        <span class="value">Jumat, 28 Agustus 2026</span>
+                    </div>
+                    <div class="logistics-item">
+                        <span class="label">Waktu</span>
+                        <span class="value">15.00 WIB - Selesai</span>
+                    </div>
+                    <div class="logistics-item full-width">
+                        <span class="label">Lokasi</span>
+                        <span class="value">Gedung Dinas Perikanan Kabupaten Malang (Jl. Trunojoyo No.12, Krajan, Panggungrejo, Kec. Kepanjen, Kabupaten Malang, Jawa Timur 65163)</span>
+                    </div>
+                </div>
+                <a href="https://maps.app.goo.gl/amWABD23a7V7shCZ6" target="_blank" class="btn-maps">Buka di Google Maps</a>
+            </div>
+        </section>
+
+        <!-- Cashless Gifting Hub -->
+        <section class="gifting reveal">
+            <div class="gifting-card">
+                <h2>Tanda Kasih</h2>
+                <p class="gifting-note">Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika Anda ingin memberikan tanda kasih, Anda dapat memberikannya melalui:</p>
+                
+                <div class="qris-section">
+                    <div class="qris-box">
+                        <img src="public/images/qris.jpeg" alt="QRIS Nana & Mada" class="qris-img" loading="lazy" decoding="async" width="874" height="1240">
+                    </div>
+                    <a href="public/images/qris.jpeg" download="QRIS_Nana_Primada.jpg" class="btn-download-qris">Unduh QRIS</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Thank You Section -->
+        <section class="thank-you reveal">
+            <h2>Terima Kasih</h2>
+            <img src="public/images/10.webp" alt="Thank You" class="thank-you-image" loading="lazy" decoding="async" width="1080" height="1080">
+            <p>Atas doa dan restu yang telah diberikan, kami ucapkan terima kasih yang sebesar-besarnya.</p>
+        </section>
+
+        <footer class="simple-footer">
+            <p>Nana & Mada | 2026 | Made by GPHARIYONO 💖</p>
+        </footer>
+
+    </div>
+
+    <!-- Floating Music Widget (Wraps the Player and Toggle Button) -->
+    <div id="musicController" class="music-controller" style="display: none;">
+        <!-- Floating Player Card -->
+        <div id="playerCard" class="player-card">
+            <div class="player-card-header">
+                <span>Playlist Musik</span>
+                <button id="btnClosePlayer" class="btn-close-player" aria-label="Minimize Player">&times;</button>
+            </div>
+            <div class="player-iframe-wrapper">
+                <div id="yt-player"></div>
             </div>
         </div>
-    </section>
 
-    <!-- Thank You Section -->
-    <section class="thank-you reveal">
-        <h2>Terima Kasih</h2>
-        <img src="public/images/10.webp" alt="Thank You" class="thank-you-image" loading="lazy" decoding="async" width="1080" height="1080">
-        <p>Atas doa dan restu yang telah diberikan, kami ucapkan terima kasih yang sebesar-besarnya.</p>
-    </section>
-
-    <footer class="simple-footer">
-        <p>Nana & Mada | 2026 | Made by GPHARIYONO 💖</p>
-    </footer>
+        <!-- Floating Music Controller Button -->
+        <button id="btnMusicToggle" class="btn-music-toggle" aria-label="Toggle Music Control Panel">
+            <div class="sound-waves">
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+            </div>
+        </button>
+    </div>
 
     <script>
         // Parse Guest Name from URL
@@ -336,7 +374,117 @@
             }, observerOptions);
 
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+            // Invitation Opening Handler
+            const btnOpen = document.getElementById('btnOpenInvitation');
+            btnOpen.addEventListener('click', function() {
+                // Unlock scroll
+                document.body.classList.remove('scroll-locked');
+                
+                // Show content
+                const mainContent = document.getElementById('mainContent');
+                mainContent.style.display = 'block';
+                
+                // Smooth scroll to couple section
+                document.getElementById('couple').scrollIntoView({ behavior: 'smooth' });
+                
+                // Hide open button container
+                document.getElementById('openButtonContainer').style.display = 'none';
+                
+                // Show music controller
+                document.getElementById('musicController').style.display = 'block';
+                
+                // Play music if player is loaded
+                if (player && typeof player.playVideo === 'function') {
+                    try {
+                        player.unMute();
+                        player.setVolume(80);
+                        player.playVideo();
+                    } catch (e) {
+                        console.error("Error playing video:", e);
+                    }
+                }
+            });
+
+            // Music Controller click handler - Toggles the visible Player Card popup
+            const btnMusic = document.getElementById('btnMusicToggle');
+            const playerCard = document.getElementById('playerCard');
+            btnMusic.addEventListener('click', function() {
+                playerCard.classList.toggle('active');
+            });
+
+            // Close Player Card handler
+            const btnClosePlayer = document.getElementById('btnClosePlayer');
+            btnClosePlayer.addEventListener('click', function() {
+                playerCard.classList.remove('active');
+            });
         });
+
+        // YouTube IFrame Player API implementation
+        var player;
+        
+        // Load API asynchronously
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        window.onYouTubeIframeAPIReady = function() {
+            player = new YT.Player('yt-player', {
+                height: '100%',
+                width: '100%',
+                playerVars: {
+                    listType: 'playlist',
+                    list: 'PLN8tcbSfLFBW4mT7vrv1uuBEbeYSSd59K',
+                    autoplay: 0,
+                    controls: 1,
+                    disablekb: 0,
+                    fs: 1,
+                    modestbranding: 1,
+                    rel: 0,
+                    showinfo: 1,
+                    origin: window.location.origin
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange,
+                    'onError': onPlayerError
+                }
+            });
+        };
+
+        function onPlayerReady(event) {
+            const bodyLocked = document.body.classList.contains('scroll-locked');
+            if (!bodyLocked) {
+                try {
+                    event.target.unMute();
+                    event.target.setVolume(80);
+                    event.target.playVideo();
+                } catch (e) {
+                    console.error("Error in onPlayerReady:", e);
+                }
+            }
+        }
+
+        function onPlayerStateChange(event) {
+            const controller = document.getElementById('musicController');
+            if (event.data === YT.PlayerState.PLAYING) {
+                controller.classList.add('playing');
+            } else {
+                controller.classList.remove('playing');
+            }
+        }
+
+        function onPlayerError(event) {
+            console.warn("YouTube Player error encountered:", event.data);
+            // Auto skip restricted/private/not-found videos
+            if (event.data === 100 || event.data === 101 || event.data === 150 || event.data === 5) {
+                console.log("Automatically skipping unavailable video...");
+                if (player && typeof player.nextVideo === 'function') {
+                    player.nextVideo();
+                }
+            }
+        }
     </script>
 </body>
 </html>

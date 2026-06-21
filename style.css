@@ -80,8 +80,18 @@ h1, h2 {
     z-index: 3;
 }
 
-.guest-info {
+.cover-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 2rem;
+    max-width: 100%;
+    width: 100%;
+}
+
+.guest-info {
+    margin-top: 0;
     margin-left: auto;
     margin-right: auto;
     padding: 15px 25px;
@@ -242,9 +252,13 @@ h1, h2 {
     bottom: 30px;
     left: 0;
     right: 0;
-    display: flex;
+    display: none;
     justify-content: center;
     animation: bounce 2s infinite;
+}
+
+body:not(.scroll-locked) .scroll-hint {
+    display: flex;
 }
 
 @keyframes bounce {
@@ -472,5 +486,197 @@ h1, h2 {
     }
     .guest-name {
         font-size: 1.2rem;
+    }
+}
+
+/* Scroll Lock State */
+body.scroll-locked {
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* Open Invitation Entry Button */
+.open-button-container {
+    margin-top: 1.5rem;
+    z-index: 10;
+    position: relative;
+}
+
+.btn-open-invitation {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    background-color: var(--text-muted);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 30px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.btn-open-invitation:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    background-color: var(--text-main);
+}
+
+.btn-open-invitation:active {
+    transform: translateY(0);
+}
+
+/* Avatar Containers for couple details */
+.mempelai-avatar-container {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.mempelai-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Floating Music Controller styles */
+.music-controller {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+}
+
+.btn-music-toggle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--text-muted);
+    border: 2px solid var(--bg-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn-music-toggle:hover {
+    transform: scale(1.05);
+    background-color: var(--text-main);
+}
+
+.sound-waves {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 18px;
+}
+
+.sound-waves .stroke {
+    display: block;
+    width: 3px;
+    height: 5px;
+    background-color: var(--bg-color);
+    border-radius: 2px;
+    transition: height 0.3s ease;
+}
+
+.sound-waves .stroke:nth-child(1) { height: 4px; }
+.sound-waves .stroke:nth-child(2) { height: 8px; }
+.sound-waves .stroke:nth-child(3) { height: 12px; }
+.sound-waves .stroke:nth-child(4) { height: 6px; }
+
+/* Wave animation state */
+.music-controller.playing .sound-waves .stroke {
+    animation: wave 1.2s ease-in-out infinite alternate;
+}
+
+.music-controller.playing .sound-waves .stroke:nth-child(1) { animation-delay: 0.1s; }
+.music-controller.playing .sound-waves .stroke:nth-child(2) { animation-delay: 0.3s; }
+.music-controller.playing .sound-waves .stroke:nth-child(3) { animation-delay: 0.6s; }
+.music-controller.playing .sound-waves .stroke:nth-child(4) { animation-delay: 0.2s; }
+
+@keyframes wave {
+    0% { height: 4px; }
+    100% { height: 18px; }
+}
+
+/* Floating Player Card */
+.player-card {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    width: 320px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transform: translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 1001;
+}
+
+.player-card.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.player-card-header {
+    background-color: var(--text-muted);
+    color: var(--bg-color);
+    padding: 10px 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.btn-close-player {
+    background: none;
+    border: none;
+    color: var(--bg-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 5px;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.btn-close-player:hover {
+    opacity: 1;
+}
+
+.player-iframe-wrapper {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    background: #000;
+}
+
+.player-iframe-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Responsive Mobile Player Card */
+@media (max-width: 480px) {
+    .player-card {
+        width: 280px;
+        bottom: 65px;
     }
 }
