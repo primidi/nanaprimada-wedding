@@ -45,7 +45,7 @@ h1, h2 {
     position: relative;
     text-align: center;
     background: linear-gradient(rgba(237, 237, 255, 0.8), rgba(237, 237, 255, 0.8)), 
-                url('public/images/1.jpg') top center / cover no-repeat;
+                url('public/images/1.webp') top center / cover no-repeat;
 }
 
 .hero-content {
